@@ -6,7 +6,7 @@
   margin-top: 0.8rem;
 }
 
-@media all and (min-width: 1400px) {
+@media all and (min-width: 1280px) {
   .searchButton {
     margin-top: 1.42rem;
     margin-left: -0.6rem;
