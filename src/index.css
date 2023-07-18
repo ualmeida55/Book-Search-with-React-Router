@@ -4,6 +4,8 @@
 }
 .searchButton {
   margin-top: 0.8rem;
+  display: flex;
+  justify-content: center;
 }
 
 @media all and (min-width: 1280px) {
@@ -11,4 +13,94 @@
     margin-top: 1.42rem;
     margin-left: -0.6rem;
   }
+}
+
+.search-results-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.search-result-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+  max-width: 200px;
+  text-align: center;
+}
+
+.search-result-item img {
+  width: 150px;
+  height: auto;
+  border: solid 1px beige;
+
+}
+
+.search-result-item p {
+  margin-top: 0.5rem;
+}
+
+.load-more-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.load-more-button-container button {
+  padding: 0.5rem 1rem;
+}
+
+.centerP {
+  display: flex;
+  justify-content: center;
+}
+
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: gray;
+  padding: 20px;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.modal-content p{
+  margin: 0;
+}
+
+.property-name {
+  font-weight: 500;
+  font-style: italic;
+}
+
+.close {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.book-cover {
+  width: 200px;
+  height: auto;
+  margin-bottom: 1rem;
+  border: solid 2px black;
 }
