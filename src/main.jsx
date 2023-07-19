@@ -130,6 +130,27 @@ function Home() {
 }
 
 function Modal({ book, closeModal }) {
+  const authors = book.author_name?.join(", ") || "Unavailable";
+  const publishYear = book.first_publish_year || "Unavailable";
+  const numPages = book.number_of_pages_median || "Unavailable";
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        event.target.classList.contains("modal") ||
+        event.target.classList.contains("modal-content")
+      ) {
+        closeModal();
+      }
+    };
+
+    window.addEventListener("click", handleClickOutside);
+
+    return () => {
+      window.removeEventListener("click", handleClickOutside);
+    };
+  }, [closeModal]);
+
   return (
     <div className="modal">
       <div className="modal-content">
@@ -144,20 +165,22 @@ function Modal({ book, closeModal }) {
         <h2>{book.title}</h2>
         <p>
           <span className="property-name">Author: </span>
-          {book.author_name}
+          {authors}
         </p>
         <p>
           <span className="property-name">Publish Year:</span>{" "}
-          {book.first_publish_year}
+          {publishYear}
         </p>
         <p>
           <span className="property-name">Number of Pages:</span>{" "}
-          {book.number_of_pages_median}
+          {numPages}
         </p>
       </div>
     </div>
   );
 }
+
+
 
 function SearchResults() {
   return (
