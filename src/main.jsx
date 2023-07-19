@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Router>
@@ -71,6 +71,13 @@ function Home() {
 
   return (
     <div className="container">
+      <div className="credits text-center">
+        <a href="https://github.com/ualmeida55/Book-Search-with-React-Router">
+          Code
+        </a>{" "}
+        by <a href="https://linkedin.com/in/ualmeida">Ubi Almeida</a>
+      </div>
+      <h1 className="text-center h1Title">Book Search</h1>
       <div className="row">
         <div className="col-xxl-11 gx-2">
           <label htmlFor=""></label>
@@ -87,9 +94,7 @@ function Home() {
           </button>
         </div>
       </div>
-
-      {isLoading && <p className="centerP">Loading...</p>}
-
+      {isLoading && <h3 className="centerP">Loading...</h3>}
       {searchPerformed && searchResults.length > 0 && (
         <div className="search-results-container">
           {searchResults.slice(0, visibleResults).map(result => (
@@ -107,11 +112,9 @@ function Home() {
           ))}
         </div>
       )}
-
       {searchPerformed && searchResults.length === 0 && (
         <p className="centerP">No results found.</p>
       )}
-
       {!isLoading && visibleResults < searchResults.length && (
         <div className="load-more-button-container">
           <button className="btn btn-primary" onClick={loadMoreResults}>
@@ -119,7 +122,6 @@ function Home() {
           </button>
         </div>
       )}
-
       {showModal && selectedBook && (
         <Modal book={selectedBook} closeModal={closeModal} />
       )}
