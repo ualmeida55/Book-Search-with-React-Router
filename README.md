@@ -7,6 +7,7 @@ Deployed using Vercel: [Live Demo](https://book-search-with-react-router-oqdw.ve
 ## Built with  
 - React
 - React Router  
+- Bootstrap  
 - HTML  
 - CSS    
 - Vite
